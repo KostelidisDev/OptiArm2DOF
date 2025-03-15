@@ -1,0 +1,2 @@
+geneal==0.7.1
+pyinstaller==6.12.0

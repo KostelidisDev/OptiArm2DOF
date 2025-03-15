@@ -1,0 +1,8 @@
+.idea
+.venv
+assets
+build
+dist
+.dockerignore
+.gitignore
+Dockerfile
