@@ -33,8 +33,41 @@ class Config:
     def set_max_distance(self, max_distance: int):
         self.max_distance = int(max_distance)
 
+    def set_n_genes(self, n_genes: int):
+        self.n_genes = int(n_genes)
+
+    def set_max_gen(self, max_gen: int):
+        self.max_gen = int(max_gen)
+
+    def set_pop_size(self, pop_size: int):
+        self.pop_size = int(pop_size)
+
+    def set_mutation_rate(self, mutation_rate: float):
+        self.mutation_rate = float(mutation_rate)
+
+    def set_selection_rate(self, selection_rate: float):
+        self.selection_rate = float(selection_rate)
+
+    def set_selection_strategy(self, selection_strategy: str):
+        self.selection_strategy = selection_strategy
+
+    def set_verbose(self, verbose: str):
+        self.verbose = verbose == "True"
+
+    def set_show_stats(self, show_stats: bool):
+        self.show_stats = show_stats == "True"
+
     def set_plot_stats(self, plot_stats: str):
         self.plot_stats = plot_stats == "True"
+
+    def set_variables_type(self, variables_type: str):
+        if variables_type == "int":
+            self.variables_type = int
+            return
+        if variables_type == "float":
+            self.variables_type = float
+            return
+        self.variables_type = int
 
     def log(self):
         print(f"\t\tLower Bound: {self.lower_bound}")
@@ -75,7 +108,15 @@ def get_config() -> Config:
         "UPPER_BOUND": config.set_upper_bound,
         "MIN_DISTANCE": config.set_min_distance,
         "MAX_DISTANCE": config.set_max_distance,
+        "MAX_GEN": config.set_max_gen,
+        "POP_SIZE": config.set_pop_size,
+        "MUTATION_RATE": config.set_mutation_rate,
+        "SELECTION_RATE": config.set_selection_rate,
+        "SELECTION_STRATEGY": config.set_selection_strategy,
+        "VERBOSE": config.set_verbose,
+        "SHOW_STATS": config.set_show_stats,
         'PLOT_STATS': config.set_plot_stats,
+        "VARIABLES_TYPE": config.set_variables_type
     }
     for key, value in parsed.items():
         if key not in key_to_config_set_function:
