@@ -15,7 +15,7 @@ class Config:
     selection_strategy: str = "roulette_wheel"
     verbose: bool = False
     show_stats: bool = False
-    plot_stats: bool = True
+    plot_stats: bool = False
     variables_type: type = int
     fitness_tolerance: bool = False
     fitness_tolerance_diff: float = 1
