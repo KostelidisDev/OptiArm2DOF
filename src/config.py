@@ -8,8 +8,8 @@ class Config:
     min_distance: int = 70
     max_distance: int = 150
     n_genes: int = 2
-    max_gen: int = 100
-    pop_size: int = 20
+    max_gen: int = 50
+    pop_size: int = 10
     mutation_rate: float = 0.15
     selection_rate: float = 0.5
     selection_strategy: str = "roulette_wheel"
