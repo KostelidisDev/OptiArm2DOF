@@ -3,6 +3,7 @@
 assets
 build
 dist
+test
 .dockerignore
 .gitignore
 Dockerfile
