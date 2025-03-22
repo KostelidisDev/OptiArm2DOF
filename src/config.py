@@ -3,7 +3,7 @@ from typing import Tuple
 
 
 class Config:
-    lower_bound: int = 0
+    lower_bound: int = 1
     upper_bound: int = 150
     min_distance: int = 70
     max_distance: int = 150
