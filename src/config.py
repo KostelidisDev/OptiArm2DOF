@@ -17,9 +17,17 @@ class Config:
     show_stats: bool = False
     plot_stats: bool = True
     variables_type: type = int
+    fitness_tolerance: bool = False
+    fitness_tolerance_diff: float = 1
+    fitness_tolerance_gen: int = 50
 
     def get_variables_limits(self) -> Tuple[int, int]:
         return self.lower_bound, self.upper_bound
+
+    def get_fitness_tolerance(self) -> Tuple[float, float] or None:
+        if self.fitness_tolerance is False:
+            return None
+        return self.fitness_tolerance_diff, self.fitness_tolerance_gen
 
     def set_lower_bound(self, lower_bound: int):
         self.lower_bound = int(lower_bound)
@@ -69,6 +77,15 @@ class Config:
             return
         self.variables_type = int
 
+    def set_fitness_tolerance(self, fitness_tolerance: str):
+        self.fitness_tolerance = fitness_tolerance == "True"
+
+    def set_fitness_tolerance_diff(self, fitness_tolerance_diff: float):
+        self.fitness_tolerance_diff = float(fitness_tolerance_diff)
+
+    def set_fitness_tolerance_gen(self, fitness_tolerance_gen: int):
+        self.fitness_tolerance_gen = int(fitness_tolerance_gen)
+
     def log(self):
         print(f"\t\tLower Bound: {self.lower_bound}")
         print(f"\t\tUpper Bound: {self.upper_bound}")
@@ -84,6 +101,9 @@ class Config:
         print(f"\t\tShow Stats: {self.show_stats}")
         print(f"\t\tPlot Stats: {self.plot_stats}")
         print(f"\t\tVariables Type: {self.variables_type}")
+        print(f"\t\tFitness Tolerance: {self.fitness_tolerance}")
+        print(f"\t\tFitness Tolerance Diff: {self.fitness_tolerance_diff}")
+        print(f"\t\tFitness Tolerance Gen: {self.fitness_tolerance_gen}")
 
 
 def get_config() -> Config:
@@ -116,7 +136,10 @@ def get_config() -> Config:
         "VERBOSE": config.set_verbose,
         "SHOW_STATS": config.set_show_stats,
         'PLOT_STATS': config.set_plot_stats,
-        "VARIABLES_TYPE": config.set_variables_type
+        "VARIABLES_TYPE": config.set_variables_type,
+        "FITNESS_TOLERANCE": config.set_fitness_tolerance,
+        "FITNESS_TOLERANCE_DIF": config.set_fitness_tolerance_diff,
+        "FITNESS_TOLERANCE_GEN": config.set_fitness_tolerance_gen,
     }
     for key, value in parsed.items():
         if key not in key_to_config_set_function:

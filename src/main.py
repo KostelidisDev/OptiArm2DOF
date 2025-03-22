@@ -36,6 +36,7 @@ def main(config: Config) -> None:
         plot_results=config.plot_stats,
         variables_limits=config.get_variables_limits(),
         variables_type=config.variables_type,
+        fitness_tolerance=config.get_fitness_tolerance()
     )
 
     print("Running genetic algorithm...")
