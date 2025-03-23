@@ -7,6 +7,7 @@ OptiArm2DOF is a project that utilizes a Genetic Algorithm to optimize the lengt
 # Extra files
 ** The extra files are written in Greek Language.
 * [PDF/Text](./assets/Ρ202%20-%20OptiArm2DOF.pdf)
+* [PPTX/Presentation](./assets/Ρ202%20-%20OptiArm2DOF.pptx)
 
 # License
 [MIT License](./LICENSE)
