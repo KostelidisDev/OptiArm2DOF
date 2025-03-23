@@ -9,7 +9,7 @@ def main(config: Config) -> None:
     print("*" * 10)
     print("OptiArm2DOF")
     print("Developed by Iordanis Kostelidis <iordkost@ihu.gr>")
-    print("This project was conducted as part of the course Ρ202: Mechanical Intelligence "
+    print("This project was conducted as part of the course Ρ202: Machine Intelligence "
           "in the M.Sc. program in Robotics, offered by the Department of "
           "Computer, Informatics and Telecommunications Engineering at the "
           "International Hellenic University.")
